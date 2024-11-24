@@ -1,0 +1,18 @@
+name: Test Project
+on: push
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get code ## checkout repository into the ubuntu machine
+        uses: actions/checkout@v4 
+      - name: Install NodeJS ## if we don't have nodeJS in the server but ubuntu has NodeJS by default
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+      - name: Install dependencies ## install the dependency libraries according to package.json file
+        run: npm ci ## npm install is another way
+      - name: Run tests
+        run: npm test ## command to run the tests
+        
+        
