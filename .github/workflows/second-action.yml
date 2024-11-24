@@ -1,7 +1,7 @@
 name: Test Project
-on: push
+on: workflow_dispatch ## push
 jobs:
-  test:
+  test: ## give any name for the job
     runs-on: ubuntu-latest
     steps:
       - name: Get code ## checkout repository into the ubuntu machine
